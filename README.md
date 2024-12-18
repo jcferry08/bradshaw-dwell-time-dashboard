@@ -1,0 +1,2 @@
+# bradshaw-dwell-time-dashboard
+ The Bradshaw Dwell Time Dashboard is a data visualization and analysis tool that monitors shipment dwell times and compliance. It allows users to identify trends, track key performance indicators (KPIs), and assess operational efficiency across multiple timeframes (daily, weekly, monthly, and yearly).  This tool also specifically calculates and visualizes No Show counts based on uploaded data from Open Dock reports.
