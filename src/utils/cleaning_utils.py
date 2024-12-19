@@ -185,6 +185,13 @@ def clean_and_merge_compliance(oo_df, ta_df):
     # Remove duplicate Shipment ID rows, keeping the one with the latest Appt DateTime
     merged_df = merged_df.sort_values(by='Appt DateTime', ascending=False).drop_duplicates(subset='Shipment ID')
 
+    # Filter out specified carriers
+    carriers_to_exclude = [
+        'AACT', 'DIMS', 'EXLA', 'SAIA', 'FXFE', 'FXLA', 'FXNL', 'F106', 'F107',
+        'F109', 'F110', 'F111', 'F112', 'F117', 'ODFL', 'U743', 'U746', 'U748', 'VQXX', 'CTII'
+    ]
+    merged_df = merged_df[~merged_df['Carrier'].isin(carriers_to_exclude)]
+
     return merged_df
 
 def calculate_dwell_time(row):
